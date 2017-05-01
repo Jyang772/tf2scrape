@@ -1,0 +1,21 @@
+CC=g++
+CFLAGS= -c -Wall -std=c++11
+LDLIBS= -lmysqlcppconn
+
+
+all: tf2cpp
+
+tf2cpp: main.o least_squares.o prices_model.o
+	$(CC) main.o least_squares.o prices_model.o -o tf2cpp $(LDLIBS)
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+
+least_squares.o: least_squares.cpp
+	$(CC) $(CFLAGS) least_squares.cpp 
+
+prices_model.o: prices_model.cpp
+	$(CC) $(CFLAGS) prices_model.cpp
+
+clean:
+	rm *.o tf2cpp

@@ -1,0 +1,22 @@
+## BACKPACK
+CREATE TABLE `tf2scrape`.`backpack` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `batch_id` INT UNSIGNED NULL, `defindex` INT NULL, `item_name` VARCHAR(255) NULL, `quality_integer` VARCHAR(45) NULL, `currency` VARCHAR(45) NULL, `price` DOUBLE NULL, `last_update` INT(8) NULL, PRIMARY KEY (`id`));
+
+## MARKETPLACE
+CREATE TABLE `tf2scrape`.`marketplace` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `insert_time` DATETIME, `defindex` INT NULL, `item_name` VARCHAR(255) NULL, `currency` VARCHAR(45) NULL, `price` DOUBLE NULL, `batch_id` INT UNSIGNED NULL, PRIMARY KEY (`id`)); 
+
+## SCRAP
+CREATE TABLE `tf2scrape`.`scrap` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `defindex` INT NULL,`quality` VARCHAR(45) NULL,`key_price` VARCHAR(45) NULL, `ref_price` VARCHAR(45) NULL, `item_name` VARCHAR(255) NULL, `batch_id` INT UNSIGNED NULL, PRIMARY KEY (`id`));
+
+## TRADETF
+CREATE TABLE `tf2scrape`.`tradetf` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `item_name` VARCHAR(255) NULL, `defindex` INT NULL, `batch_id` INT UNSIGNED NULL, `unique_min` DOUBLE NULL, `unique_max` DOUBLE NULL, `unique_currency` VARCHAR(45) NULL, `uncraft_min` DOUBLE NULL, `uncraft_max` DOUBLE NULL, `uncraft_currency` VARCHAR(45) NULL, `vintage_min` DOUBLE NULL, `vintage_max` DOUBLE NULL, `vintage_currency` VARCHAR(45) NULL, `genuine_min` DOUBLE NULL, `genuine_max` DOUBLE NULL, `genuine_currency` VARCHAR(45) NULL, `strange_min` DOUBLE NULL, `strange_max` DOUBLE NULL, PRIMARY KEY (`id`));
+
+## REFINED
+CREATE TABLE `tf2scrape`.`refined` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `batch_id` INT UNSIGNED NULL,
+  `defindex` INT NULL,
+  `item_name` VARCHAR(255) NULL,
+  `currency` VARCHAR(45) NULL,
+  `quality` VARCHAR(45) NULL,
+  `price` DOUBLE NULL,
+  PRIMARY KEY (`id`));
